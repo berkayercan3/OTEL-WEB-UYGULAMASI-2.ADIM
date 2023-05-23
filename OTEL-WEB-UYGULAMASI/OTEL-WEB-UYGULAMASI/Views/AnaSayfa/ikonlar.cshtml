@@ -1,0 +1,16 @@
+﻿@using OTEL_WEB_UYGULAMASI.Models.Siniflar
+@model List<ikonlar>
+
+
+
+<div class="social">
+    <!-- Logoları ekledik -->
+
+    @foreach (var x in Model)
+    {
+        <a href="@x.link"><i class="@x.ikon"></i></a>
+         
+    }
+
+
+</div>

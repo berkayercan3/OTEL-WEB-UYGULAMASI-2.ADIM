@@ -1,0 +1,55 @@
+﻿@using OTEL_WEB_UYGULAMASI.Models.Siniflar
+@model List<AnaSayfa>
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERCAN OTEL</title>
+    <link rel="stylesheet" href="~/otelhtmlandcss/style.css"> <!--css sayfamızı bağladık-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!--Logoların URL adresini kaydettik-->
+</head>
+<body>
+    <div class="center">
+        <!--İçeriği barındıran center isminde bir div belirledik-->
+        <div class="avatar">
+            <img src="~/otelhtmlandcss/ERCAN OTEL2.png">  <!--Arka plan resmi ekledik-->
+        </div>
+        <div class="content">
+
+            @foreach (var x in Model)
+            {
+                <h1>@x.isim</h1>
+                <h2>@x.unvan</h2>
+                <p>@x.aciklama</p>
+
+                <div class="button">
+                    <button onclick="window.location.href='https://localhost:44313/otelhtmlandcss/admin.html'">ADMİN GİRİŞ</button>
+                    <button onclick="window.location.href='http://www.mozilla.org/'">MÜŞTERİ GİRİŞ</button>
+                </div>
+
+                <h3>@x.iletisim</h3>
+            }
+
+        </div>
+
+        <div class="social">
+            <!-- Logoları ekledik -->
+            <a target="_blank" href="https://www.instagram.com/berkay.ercnn/"><i class="fa-brands fa-instagram"></i></a>
+            <font color="#b036b0" title="bercan644@gmail.com"> <a target="_blank" href="#"><i class="fa-regular fa-envelope"></i></a></font>
+            <a target="_blank" href="https://github.com/berkayercan3"><i class="fa-brands fa-github"></i></a>
+            <a target="_blank" href="https://www.linkedin.com/in/berkay-ercan-1aa83723b/"><i class="fa-brands fa-linkedin-in"></i></a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
