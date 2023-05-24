@@ -130,6 +130,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AnaSayfaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MusteriController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -160,6 +161,8 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="otelhtmlandcss\2815428.png" />
+    <Content Include="otelhtmlandcss\5509636.png" />
     <Content Include="otelhtmlandcss\admin.css" />
     <Content Include="otelhtmlandcss\admin.html" />
     <Content Include="otelhtmlandcss\ERCAN OTEL2.png" />
@@ -167,6 +170,9 @@
     <Content Include="otelhtmlandcss\hotel-1979406_1280.jpg" />
     <Content Include="otelhtmlandcss\illustration-customer-service-concept_53876-5883.png" />
     <Content Include="otelhtmlandcss\index.html" />
+    <Content Include="otelhtmlandcss\interior-the-maldives-pool-the-hotel-wallpaper-preview.jpg" />
+    <Content Include="otelhtmlandcss\musteri.css" />
+    <Content Include="otelhtmlandcss\Musteri.html" />
     <Content Include="otelhtmlandcss\style.css" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -203,6 +209,8 @@
     <Content Include="Views\AnaSayfa\ikonlar.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Shared\_MusteriLayout.cshtml" />
+    <Content Include="Views\Musteri\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

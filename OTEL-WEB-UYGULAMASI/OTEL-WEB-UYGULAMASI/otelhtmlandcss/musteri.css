@@ -1,0 +1,97 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("interior-the-maldives-pool-the-hotel-wallpaper-preview.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.container {
+    width: 400px;
+    background-color: rgb(255, 255, 255);
+    height: 700px;
+    padding: 80px 40px;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0.8;
+    
+}
+
+.txtb1 {
+    position:fixed;
+    left: 33% ;
+    top:600px ;
+   
+}
+.txtb {
+    border-bottom: 2px solid #adadad;
+    position: relative;
+    margin: 30px 0;
+}
+
+    .txtb input {
+        font-size: 15px;
+        color: #333;
+        border: none;
+        width: 100%;
+        outline: none;
+        background-color: none;
+        padding: 0 5px;
+        height: 40px;
+    }
+
+.container .adminlogo img {
+    width: 330px;
+    height: 240px;
+    margin-top: -40px;
+    margin-bottom: 40px;
+}
+
+.logbtn {
+    display: block;
+    width: 100%;
+    height: 50px;
+    border: none;
+    background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376);
+    box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+.logbtn2 {
+    display: block;
+    width: 80%;
+    height: 40px;
+    border: none;
+    background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: .5s;
+    position: fixed;
+    top: 620px;
+}
+
+    .logbtn:hover {
+        background-position: left;
+        border-radius: 100px;
+    }
+
+.logbtn2:hover {
+    background-position: left;
+    border-radius: 100px;
+}
