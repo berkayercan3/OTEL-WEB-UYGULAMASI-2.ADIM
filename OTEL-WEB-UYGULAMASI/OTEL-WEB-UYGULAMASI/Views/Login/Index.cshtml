@@ -1,0 +1,43 @@
+﻿
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel Login</title>
+    <link rel="stylesheet" href="~/otelhtmlandcss/admin.css">
+</head>
+<body>
+    <div class="container">
+        <div class="adminlogo">
+            <img src="~/otelhtmlandcss/illustration-customer-service-concept_53876-5883.png">
+        </div>
+        <div class="contact-form">
+            <h2>Admin Login</h2>
+            @using (Html.BeginForm("Index", "Login", FormMethod.Post))
+            {
+                <div class="txtb">
+                    <input type="text" name="kullaniciadi" placeholder="Username">
+                </div>
+                <div class="txtb">
+                    <input type="password" name="sifre" placeholder="Password">
+                </div>
+                <div>
+                    <input type="submit" class="logbtn" value="Login">
+                </div>
+
+                <div class="alert alert-danger" role="alert">
+                    @ViewBag.ErrorMessage
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,9 +1,17 @@
 ﻿@using OTEL_WEB_UYGULAMASI.Models.Siniflar
 @model List<AnaSayfa>
-
-
 @{
     Layout = null;
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div id="successMessage" class="alert alert-success alert-dismissible fade show" role="alert">
+        <span>@TempData["SuccessMessage"]</span>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
 }
 
 <!DOCTYPE html>
@@ -13,10 +21,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ERCAN OTEL</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
     <link rel="stylesheet" href="~/otelhtmlandcss/style.css"> <!--css sayfamızı bağladık-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!--Logoların URL adresini kaydettik-->
+    <style>
+     
+    </style>
 </head>
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
     <div class="center">
         <!--İçeriği barındıran center isminde bir div belirledik-->
         <div class="avatar">
@@ -46,8 +61,19 @@
             <font color="#b036b0" title="bercan644@gmail.com"> <a target="_blank" href="#"><i class="fa-regular fa-envelope"></i></a></font>
             <a target="_blank" href="https://github.com/berkayercan3"><i class="fa-brands fa-github"></i></a>
             <a target="_blank" href="https://www.linkedin.com/in/berkay-ercan-1aa83723b/"><i class="fa-brands fa-linkedin-in"></i></a>
-
         </div>
+
+        <script>
+            // Kapatma düğmesine tıklandığında kutucuğu gizleyen işlev
+            function hideMessage() {
+                var successMessage = document.getElementById("successMessage");
+                successMessage.style.display = "none";
+            }
+
+            // Kapatma düğmesine tıklama olayını dinleyen kod
+            var closeBtn = document.querySelector("#successMessage .close");
+            closeBtn.addEventListener("click", hideMessage);
+        </script>
 
     </div>
 

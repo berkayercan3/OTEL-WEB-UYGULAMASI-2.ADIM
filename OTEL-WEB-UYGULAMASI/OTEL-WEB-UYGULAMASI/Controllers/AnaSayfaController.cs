@@ -13,14 +13,13 @@ namespace OTEL_WEB_UYGULAMASI.Controllers
         Context c = new Context();
         public ActionResult Index()
         {
+            if (TempData["SuccessMessage"] != null)
+            {
+                ViewBag.SuccessMessage = TempData["SuccessMessage"];
+            }
+
             var deger = c.AnaSayfas.ToList();
             return View(deger);
-        }
-
-        public PartialViewResult ikonlar()
-        {
-            var deger = c.ikonlars.ToList();
-            return PartialView(deger);
         }
     }
 }

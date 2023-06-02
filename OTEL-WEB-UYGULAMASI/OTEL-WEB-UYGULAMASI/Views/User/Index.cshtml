@@ -1,0 +1,46 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Müşteri Giriş</title>
+    <link rel="stylesheet" href="~/otelhtmlandcss/musteriSign.css">
+</head>
+<body>
+    <div class="container">
+        <div class="adminlogo">
+            <img src="~/otelhtmlandcss/2815428.png">
+        </div>
+
+        <div class="contact-form">
+            <h2>Üye Ol</h2>
+            <form action="@Url.Action("Create", "User")" method="post">
+                <div class="txtb">
+                    <input type="text" name="Name" placeholder="Name">
+                </div>
+                <div class="txtb">
+                    <input type="text" name="Surname" placeholder="Surname">
+                </div>
+                <div class="txtb">
+                    <input type="text" name="Username" placeholder="Username">
+                </div>
+                <div class="txtb">
+                    <input type="password" name="Password" placeholder="Password">
+                </div>
+                <div class="txtb">
+                    <input type="password" name="ConfirmPassword" placeholder="Password Repeat">
+                </div>
+                <div>
+                    <input type="submit" class="logbtn" value="Sign Up">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
