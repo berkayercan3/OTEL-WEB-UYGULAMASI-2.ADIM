@@ -1,0 +1,50 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Müşteri Giriş</title>
+    <link rel="stylesheet" href="~/otelhtmlandcss/musteri.css">
+</head>
+<body>
+    <div class="container">
+        <div class="adminlogo">
+            <img src="~/otelhtmlandcss/5509636.png">
+        </div>
+        <div class="contact-form">
+            <h2>Müşteri Giriş</h2>
+            <form method="post" action="/MusteriLogin/Login">
+                <div class="txtb">
+                    <input type="text" name="username" placeholder="Username">
+                </div>
+                <div class="txtb">
+                    <input type="password" name="password" placeholder="Password">
+                </div>
+                <div>
+                    <input type="submit" class="logbtn" value="Login">
+                </div>
+            </form>
+
+            @if (ViewBag.ErrorMessage != null)
+            {
+                <div class="error-message">
+                    @ViewBag.ErrorMessage
+                </div>
+            }
+
+            <div class="txtb1">
+                <h4>Üye Değil misiniz?</h4>
+            </div>
+
+            <div>
+                <input type="button" class="logbtn2" value="Sign Up" onclick="window.location.href='https://localhost:44313/MusteriSign/Index'">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
