@@ -1,0 +1,162 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Müşteri Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
+
+    <style>
+        .oda {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+
+            .oda img {
+                width: 400px;
+                height: 400px;
+                object-fit: cover;
+            }
+    </style>
+</head>
+<body>
+
+    <h2>Müşteri Paneli</h2>
+
+    <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+        <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+        <a href="#" class="w3-bar-item w3-button btn-info" id="rezervasyonButonu">Rezervasyon İşlemleri</a>
+        <a href="#" class="w3-bar-item w3-button" id="odalarButonu">Odalarımız ve Fiyat Listemiz</a>
+        <a href="#" class="w3-bar-item w3-button" id="uyeBilgileriButonu">Üye Bilgileriniz</a>
+        <a href="#" class="w3-bar-item w3-button btn-danger" id="cikisButonu">Çıkış Yap</a>
+    </div>
+
+    <div class="w3-teal">
+        <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button>
+        <div class="w3-container" style="background: rgb(0,134,42); background: linear-gradient(90deg, rgba(0,134,42,1) 9%, rgba(47,121,9,1) 34%, rgba(0,212,255,1) 100%);">
+            <h1>Ercan Otel Keyifli Tatiller Diler</h1>
+        </div>
+    </div>
+
+    <div class="w3-container">
+        <div id="rezervasyonlarTablosu">
+            <table>
+                <th>
+                    <h3>Rezervasyonlar</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Rezervasyon ID</th>
+                                <th>Müşteri Adı</th>
+                                <th>Oda Numarası</th>
+                                <th>Check-in Tarihi</th>
+                                <th>Check-out Tarihi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var rezervasyon in Model)
+                            {
+                                <tr>
+                                    <td>@rezervasyon.RezervasyonID</td>
+                                    <td>@rezervasyon.MusteriAdi</td>
+                                    <td>@rezervasyon.OdaNumarasi</td>
+                                    <td>@rezervasyon.CheckInTarihi</td>
+                                    <td>@rezervasyon.CheckOutTarihi</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </th>
+                <th>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                </th>
+                <th>Rezervasyon Yap
+                <td>
+                    <form id="rezervasyonFormu">
+                        <select name="odaSecimi" id="odaSecimi">
+                            <option value="oda1">Oda 1</option>
+                            <option value="oda2">Oda 2</option>
+                            <option value="oda3">Oda 3</option>
+                            <!-- Diğer odalar buraya eklenebilir -->
+                        </select>
+                        <br>
+                        Giriş Tarihi: <input type="date" name="girisTarihi" id="girisTarihi">
+                        <br>
+                        Çıkış Tarihi: <input type="date" name="cikisTarihi" id="cikisTarihi">
+                        <br>
+                        <button type="submit">Rezervasyon Oluştur</button>
+                    </form>
+                </td></th>
+            </table>
+        </div>
+
+        <div id="odalarListesi" style="display: none;">
+            <h3>Odalarımız ve Fiyat Listemiz</h3>
+            <div class="oda">
+                <img src="~/otelhtmlandcss/DALL·E 2023-06-05 13.22.18 - a princess pink hotel room.png" alt="Oda 1">
+                <h4>Prenses Odası</h4>
+                <p>Fiyat: 1000 TL</p>
+            </div>
+            <div class="oda">
+                <img src="~/otelhtmlandcss/divan-erbil-presidential-suite-(1)-1080x700.jpg" alt="Oda 2">
+                <h4>Kral Odası</h4>
+                <p>Fiyat: 1500 TL</p>
+            </div>
+            <div class="oda">
+                <img src="~/otelhtmlandcss/joyanaaileodasi.jpg" alt="Oda 3">
+                <h4>Aile Odası</h4>
+                <p>Fiyat: 500 TL</p>
+            </div>
+            <!-- Diğer odalar ve fiyatları buraya eklenebilir -->
+        </div>
+    </div>
+
+    <script>
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+
+        document.getElementById("rezervasyonButonu").addEventListener("click", function () {
+            document.getElementById("rezervasyonlarTablosu").style.display = "block";
+            document.getElementById("odalarListesi").style.display = "none";
+        });
+
+        document.getElementById("odalarButonu").addEventListener("click", function () {
+            document.getElementById("odalarListesi").style.display = "block";
+            document.getElementById("rezervasyonlarTablosu").style.display = "none";
+        });
+
+        document.getElementById("uyeBilgileriButonu").addEventListener("click", function () {
+            var kullaniciBilgileri = {
+                name: "Adınız",
+                surname: "Soyadınız",
+                username: "Kullanıcı Adınız"
+            };
+
+            var kullaniciBilgileriMetin = "Ad: " + kullaniciBilgileri.name + ", Soyad: " + kullaniciBilgileri.surname + ", Kullanıcı Adı: " + kullaniciBilgileri.username;
+
+            var kullaniciBilgileriAlan = document.getElementById("kullaniciBilgileri");
+            kullaniciBilgileriAlan.innerHTML = kullaniciBilgileriMetin;
+        });
+
+
+
+
+
+        document.getElementById("cikisButonu").addEventListener("click", function () {
+            window.location.href = "https://localhost:44313/AnaSayfa/Index";
+        });
+
+    </script>
+</body>
+</html>

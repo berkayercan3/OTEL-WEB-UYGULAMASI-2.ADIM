@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
@@ -16,15 +15,12 @@
     <!-- Sidebar -->
     <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
         <h3 class="w3-bar-item">Admin Panel</h3>
-        <a href="#" class="w3-bar-item w3-button btn-secondary">Misafir İşlemleri</a>
-        <a href="#" class="w3-bar-item w3-button btn-dark">Personel İşlemleri</a>
-        <a href="#" class="w3-bar-item w3-button btn-secondary">Rezervasyon İşlemleri</a>
-        <a href="#" class="w3-bar-item w3-button btn-dark">Odalar</a>
+        <a href="#" class="w3-bar-item w3-button btn-secondary" onclick="showContent('Misafir')">Misafir İşlemleri</a>
+        <a href="#" class="w3-bar-item w3-button btn-dark" onclick="showContent('Personel')">Personel İşlemleri</a>
+        <a href="#" class="w3-bar-item w3-button btn-secondary" onclick="showContent('Rezervasyon')">Rezervasyon İşlemleri</a>
+        <a href="#" class="w3-bar-item w3-button btn-dark" onclick="showContent('Odalar')">Odalar</a>
         <a href="#" class="w3-bar-item w3-button btn-danger">Çıkış</a>
-
-
-
-    </div> 
+    </div>
 
     <!-- Page Content -->
     <div style="margin-left:25%">
@@ -35,9 +31,33 @@
 
         <div class="w3-container">
             @RenderBody()
-           </div>
 
+            <div id="contentMisafir" style="display: none;">
+                <!-- Misafir İşlemleri sayfasının içeriği -->
+                <h2>Misafir İşlemleri</h2>
+                <p>Bu alanda misafirlerle ilgili işlemler gerçekleştirilebilir.</p>
+            </div>
+
+            <div id="contentPersonel" style="display: none;">
+                <!-- Personel İşlemleri sayfasının içeriği -->
+                <h2>Personel İşlemleri</h2>
+                <p>Bu alanda personellerle ilgili işlemler gerçekleştirilebilir.</p>
+            </div>
+
+            <!-- Diğer içerikler -->
+        </div>
     </div>
+
+    <script>
+        function showContent(contentName) {
+            var contents = document.getElementsByClassName("w3-container");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            var content = document.getElementById("content" + contentName);
+            content.style.display = "block";
+        }
+    </script>
 
 </body>
 </html>

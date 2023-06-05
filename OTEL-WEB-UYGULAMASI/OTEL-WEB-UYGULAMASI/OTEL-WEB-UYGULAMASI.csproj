@@ -133,6 +133,7 @@
     <Compile Include="Controllers\MusteriController.cs" />
     <Compile Include="Controllers\MusteriLoginController.cs" />
     <Compile Include="Controllers\MusteriSignController.cs" />
+    <Compile Include="Controllers\RezervasyonController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -140,6 +141,8 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Siniflar\Admin.cs" />
     <Compile Include="Models\Siniflar\AnaSayfa.cs" />
+    <Compile Include="Models\Siniflar\ReservationViewModel.cs" />
+    <Compile Include="Models\Siniflar\Rezervasyon.cs" />
     <Compile Include="Models\Siniflar\Context.cs" />
     <Compile Include="Models\Siniflar\ikonlar.cs" />
     <Compile Include="Models\Siniflar\User.cs" />
@@ -169,12 +172,15 @@
     <Content Include="otelhtmlandcss\5509636.png" />
     <Content Include="otelhtmlandcss\admin.css" />
     <Content Include="otelhtmlandcss\admin.html" />
+    <Content Include="otelhtmlandcss\DALL·E 2023-06-05 13.22.18 - a princess pink hotel room.png" />
+    <Content Include="otelhtmlandcss\divan-erbil-presidential-suite-%281%29-1080x700.jpg" />
     <Content Include="otelhtmlandcss\ERCAN OTEL2.png" />
     <Content Include="otelhtmlandcss\hotel-1330850_1280.jpg" />
     <Content Include="otelhtmlandcss\hotel-1979406_1280.jpg" />
     <Content Include="otelhtmlandcss\illustration-customer-service-concept_53876-5883.png" />
     <Content Include="otelhtmlandcss\index.html" />
     <Content Include="otelhtmlandcss\interior-the-maldives-pool-the-hotel-wallpaper-preview.jpg" />
+    <Content Include="otelhtmlandcss\joyanaaileodasi.jpg" />
     <Content Include="otelhtmlandcss\musteri.css" />
     <Content Include="otelhtmlandcss\Musteri.html" />
     <Content Include="otelhtmlandcss\musteriSign.css" />
@@ -218,9 +224,11 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\MusteriLogin\Index.cshtml" />
+    <Content Include="Views\Rezervasyon\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\VeriCekme\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

@@ -12,6 +12,6 @@ namespace OTEL_WEB_UYGULAMASI.Models.Siniflar
         public DbSet<AnaSayfa> AnaSayfas { get; set; }
         public DbSet<ikonlar> ikonlars { get; set; }
         public DbSet<User> Users { get; set; }
-
+        public DbSet<Rezervasyon> Rezervasyonlar { get; set; }
     }
 }

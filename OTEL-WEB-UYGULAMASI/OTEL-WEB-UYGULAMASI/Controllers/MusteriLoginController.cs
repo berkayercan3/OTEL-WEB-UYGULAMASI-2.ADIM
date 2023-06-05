@@ -33,7 +33,7 @@ namespace OTEL_WEB_UYGULAMASI.Controllers
             {
                 // Giriş başarılı
                 // Oturumu aç veya gerekli işlemleri yap
-                return Redirect("https://localhost:44313/Musteri/Index");
+                return Redirect("https://localhost:44313/Rezervasyon/Index");
             }
             else
             {
